@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  {{cookiecutter.app_name}}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cookiecutter-{{cookiecutter.app_name}}-flask
+    image: cookiecutter-{{cookiecutter.app_name}}-flask:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
+

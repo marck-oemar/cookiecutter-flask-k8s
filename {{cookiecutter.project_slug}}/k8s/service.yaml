@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: "{{cookiecutter.k8s_namespace}}"
+  name: {{cookiecutter.app_name}}
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: {{cookiecutter.app_name}}

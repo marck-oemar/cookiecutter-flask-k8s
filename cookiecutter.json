@@ -1,0 +1,7 @@
+{
+  "project_name": "Project Name",
+  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+  "k8s_namespace": "",
+  "app_name": ""
+}
+

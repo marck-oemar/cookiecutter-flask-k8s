@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: "{{cookiecutter.k8s_namespace}}"
+  name: {{cookiecutter.app_name}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{cookiecutter.app_name}}
+  template:
+    metadata:
+      labels:
+        app: {{cookiecutter.app_name}}
+    spec:
+      containers:
+      - name: {{cookiecutter.app_name}}-container
+        image: cookiecutter-{{cookiecutter.app_name}}-flask:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
